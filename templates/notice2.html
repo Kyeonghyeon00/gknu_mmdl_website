@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>신입생 오리엔테이션 일정</title>
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="container">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="https://www.gknu.ac.kr/main/index.do" target="_blank">
+        <img alt="GKNU 로고" src="{{ url_for('static', filename='img/gknu_logo.svg') }}" style="height: 40px;"/>
+      </a>
+      <h1 style="margin: 0;"><a href="{{ url_for('main.index') }}" style="all: unset; cursor: pointer;">GKNU MMDL</a></h1>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="{{ url_for('main.index') }}">HOME</a></li>
+        <li class="dropdown">
+          <a href="{{ url_for('team.team') }}">TEAM ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url_for('team.professor') }}">교수소개</a></li>
+            <li><a href="{{ url_for('team.students') }}">대학원생 소개</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ url_for('main.publications') }}">PUBLICATIONS</a></li>
+        <li><a href="{{ url_for('board.board') }}">BOARD</a></li>
+        <li><a href="{{ url_for('main.contact') }}">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<h2>신입생 오리엔테이션 일정</h2>
+<p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">작성일: 2025-06-15</p>
+<p>신입생 오리엔테이션은 6월 20일 오후 2시에 진행됩니다.</p><p>장소: 공학 2호관 세미나실<br/>내용: 교수님 소개, 연구실 안내, Q&amp;A</p>
+<p style="margin-top: 2rem;"><a href="board.html" style="color: #0056b3;">← 목록으로 돌아가기</a></p>
+</main>
+</body>
+</html>

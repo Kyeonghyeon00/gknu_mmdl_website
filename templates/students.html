@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>STUDENTS</title>
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="container">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="https://www.gknu.ac.kr/main/index.do" target="_blank">
+        <img alt="GKNU 로고" src="{{ url_for('static', filename='img/gknu_logo.svg') }}" style="height: 40px;"/>
+      </a>
+      <h1 style="margin: 0;"><a href="{{ url_for('main.index') }}" style="all: unset; cursor: pointer;">GKNU MMDL</a></h1>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="{{ url_for('main.index') }}">HOME</a></li>
+        <li class="dropdown">
+          <a href="{{ url_for('team.team') }}">TEAM ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url_for('team.professor') }}">교수소개</a></li>
+            <li><a href="{{ url_for('team.students') }}">대학원생 소개</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ url_for('main.publications') }}">PUBLICATIONS</a></li>
+        <li><a href="{{ url_for('board.board') }}">BOARD</a></li>
+        <li><a href="{{ url_for('main.contact') }}">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<h2>대학원생 소개</h2>
+<p>대학원생 명단과 간단한 소개글이 들어갑니다.</p>
+</main>
+</body>
+</html>

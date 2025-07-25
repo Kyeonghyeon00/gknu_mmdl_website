@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <title>INDEX</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="container">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="https://www.gknu.ac.kr/main/index.do" target="_blank">
+        <img alt="GKNU 로고" src="{{ url_for('static', filename='img/gknu_logo.svg') }}" style="height: 40px;"/>
+      </a>
+      <h1 style="margin: 0;"><a href="{{ url_for('main.index') }}" style="all: unset; cursor: pointer;">GKNU MMDL</a></h1>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="{{ url_for('main.index') }}">HOME</a></li>
+        <li class="dropdown">
+          <a href="{{ url_for('team.team') }}">TEAM ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url_for('team.professor') }}">교수소개</a></li>
+            <li><a href="{{ url_for('team.students') }}">대학원생 소개</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ url_for('main.publications') }}">PUBLICATIONS</a></li>
+        <li><a href="{{ url_for('board.board') }}">BOARD</a></li>
+        <li><a href="{{ url_for('main.contact') }}">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="main-banner">
+    <h2>Materials Mechanics &amp; Design Lab</h2>
+    <p>국립경국대학교 첨단재료역학 및 설계 연구실 홈페이지에 오신 걸 환영합니다</p>
+  </section>
+
+  <section style="display: flex; align-items: center; justify-content: center; margin-top: 60px; gap: 40px; flex-wrap: wrap;">
+    <img alt="연구실 모집" src="{{ url_for('static', filename='img/cording.jpeg') }}" style="max-width: 320px; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"/>
+    <div style="max-width: 500px; font-size: 1rem; line-height: 1.6; text-align: left;">
+      <h2 style="text-align: center; margin-bottom: 10px;">대학원생, 학부연구생 모집 중</h2>
+      <h3 style="text-align: center;">&lt;연구분야&gt;</h3>
+      <ul style="display: table; margin: 0 auto; text-align: left;">
+        <li>초고강도 차세대 모빌리티용 철강소재 개발</li>
+        <li>극한 환경 (고온, 극저온, 수소환경) 금속 구조재료 개발</li>
+        <li>하이스루풋 실험법을 활용한 AI 합금설계</li>
+        <li>친환경 합금 및 프로세싱 설계</li>
+      </ul>
+      <p style="text-align: center; margin-top: 12px;"><strong>문의:</strong> <a href="mailto:wnoh@gknu.ac.kr">wnoh@gknu.ac.kr</a></p>
+    </div>
+  </section>
+</main>
+</body>
+</html>

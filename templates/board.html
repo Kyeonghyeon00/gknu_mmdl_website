@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>공지사항</title>
+<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="container">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="https://www.gknu.ac.kr/main/index.do" target="_blank">
+        <img alt="GKNU 로고" src="{{ url_for('static', filename='img/gknu_logo.svg') }}" style="height: 40px;"/>
+      </a>
+      <h1 style="margin: 0;"><a href="{{ url_for('main.index') }}" style="all: unset; cursor: pointer;">GKNU MMDL</a></h1>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="{{ url_for('main.index') }}">HOME</a></li>
+        <li class="dropdown">
+          <a href="{{ url_for('team.team') }}">TEAM ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url_for('team.professor') }}">교수소개</a></li>
+            <li><a href="{{ url_for('team.students') }}">대학원생 소개</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ url_for('main.publications') }}">PUBLICATIONS</a></li>
+        <li><a href="{{ url_for('board.board') }}">BOARD</a></li>
+        <li><a href="{{ url_for('main.contact') }}">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<h2>공지사항</h2>
+<table class="notice-table" id="noticeTable">
+<thead>
+<tr>
+<th>제목</th>
+<th>작성일</th>
+</tr>
+</thead>
+<tbody id="noticeBody"></tbody>
+</table>
+</main>
+<script>
+  const notices = [
+    { id: 1, title: "2025년 하계 인턴 모집 안내", date: "2025-07-20", link: "notice1.html" },
+    { id: 2, title: "신입생 오리엔테이션 일정", date: "2025-06-15", link: "notice2.html" },
+    { id: 3, title: "홈페이지 오픈 안내", date: "2025-05-30", link: "notice3.html" }
+  ];
+
+  notices.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const tbody = document.getElementById("noticeBody");
+  notices.forEach((notice) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td><a href="${notice.link}">${notice.title}</a></td>
+      <td>${notice.date}</td>
+    `;
+    tbody.appendChild(row);
+  });
+</script>
+</body>
+</html>

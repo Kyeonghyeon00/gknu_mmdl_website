@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Wooram Noh, Ph.D. - 교수 소개</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', 'Noto Sans KR', Arial, sans-serif;
+      background: #fff;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .prof-main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px 24px 60px 24px;
+      background: #fff;
+    }
+    .prof-header {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    .prof-photo {
+      width: 140px;
+      height: 180px;
+      background: #eee;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+    .prof-info h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a237e;
+      letter-spacing: 1px;
+    }
+    .prof-info h2 {
+      margin: 8px 0 0 0;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #333;
+    }
+    .prof-contact {
+      margin-top: 12px;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border-bottom: 3px solid #222;
+      padding-bottom: 6px;
+      margin-top: 48px;
+      margin-bottom: 32px;
+      text-align: left;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .prof-list {
+      margin: 0 0 40px 0;
+      padding: 0;
+      list-style: none;
+    }
+    .prof-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      gap: 32px;
+    }
+    .prof-date {
+      min-width: 170px;
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: #222;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .prof-degree, .prof-position {
+      min-width: 180px;
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: #111;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .prof-desc {
+      flex: 1;
+      font-size: 1.05rem;
+      color: #333;
+      line-height: 1.6;
+    }
+    @media (max-width: 700px) {
+      .prof-header { flex-direction: column; gap: 16px; }
+      .prof-row { flex-direction: column; gap: 4px; }
+      .prof-date, .prof-degree, .prof-position { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <a href="https://www.gknu.ac.kr/main/index.do" target="_blank">
+        <img alt="GKNU 로고" src="{{ url_for('static', filename='img/gknu_logo.svg') }}" style="height: 40px;"/>
+      </a>
+      <h1 style="margin: 0;"><a href="{{ url_for('main.index') }}" style="all: unset; cursor: pointer;">GKNU MMDL</a></h1>
+    </div>
+    <nav>
+      <ul class="menu">
+        <li><a href="{{ url_for('main.index') }}">HOME</a></li>
+        <li class="dropdown">
+          <a href="{{ url_for('team.team') }}">TEAM ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url_for('team.professor') }}">교수소개</a></li>
+            <li><a href="{{ url_for('team.students') }}">대학원생 소개</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ url_for('main.publications') }}">PUBLICATIONS</a></li>
+        <li><a href="{{ url_for('board.board') }}">BOARD</a></li>
+        <li><a href="{{ url_for('main.contact') }}">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+  <div class="prof-main">
+    <div class="prof-header">
+      <img src="{{ url_for('static', filename='img/nouram.png') }}" alt="Wooram Noh" class="prof-photo">
+      <div class="prof-info">
+        <h1>Wooram Noh, Ph.D.</h1>
+        <h2>Assistant Professor</h2>
+        <div class="prof-contact">
+          School of Materials Science and Engineering,<br>
+          Gyeongkuk National University<br>
+          Gyeongdong-ro 1375, Gyeongsangbuk-do, Republic of Korea<br>
+          Tel: +82-54-820-6760<br>
+          Mobile: +82-10-7190-8656<br>
+          E-mail: <a href="mailto:wnoh@gknu.ac.kr">wnoh@gknu.ac.kr</a>; <a href="mailto:wooram25@anu.ac.kr">wooram25@anu.ac.kr</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">EDUCATION</div>
+    <ul class="prof-list">
+      <li class="prof-row">
+        <div class="prof-date">2008.03 – 2015.02</div>
+        <div class="prof-degree">Ph.D.</div>
+        <div class="prof-desc">
+          Materials Science and Engineering, Seoul National University, Republic of Korea<br>
+          <span style="color:#555;">Dissertation: ‘Failure analysis of resistance spot welded advanced high strength steel sheets’<br>
+          Supervisor: Professor Kwansoo Chung</span>
+        </div>
+      </li>
+      <li class="prof-row">
+        <div class="prof-date">2004.03 – 2008.02</div>
+        <div class="prof-degree">B.S.</div>
+        <div class="prof-desc">
+          Materials Science and Engineering, Seoul National University, Republic of Korea<br>
+          <span style="color:#555;">Graduated with Honors (우등졸업)</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+    <ul class="prof-list">
+      <li class="prof-row">
+        <div class="prof-date">2023.09 – present</div>
+        <div class="prof-position">Assistant Professor</div>
+        <div class="prof-desc">
+          School of Materials Science and Engineering, Gyeongkuk National University, Gyeongsangbuk-do, Republic of Korea<br>
+          <span style="color:#555;">Courses: Physics, Physical Chemistry, Phase Transformations, Crystallography, Mechanics of Materials (Undergraduate)<br>
+          Continuum Mechanics, Materials Design (Graduate)</span>
+        </div>
+      </li>
+      <li class="prof-row">
+        <div class="prof-date">2019.01 – 2023.08</div>
+        <div class="prof-position">Senior Researcher</div>
+        <div class="prof-desc">
+          Advanced Process and Materials R&BD Group, Korea Institute of Industrial Technology, Incheon, Republic of Korea
+        </div>
+      </li>
+      <li class="prof-row">
+        <div class="prof-date">2017.02 – 2019.01</div>
+        <div class="prof-position">Postdoctoral Researcher</div>
+        <div class="prof-desc">
+          Metal Forming Technology R&BD Group, Korea Institute of Industrial Technology, Incheon, Republic of Korea
+        </div>
+      </li>
+      <li class="prof-row">
+        <div class="prof-date">2015.03 – 2017.01</div>
+        <div class="prof-position">Research Professor</div>
+        <div class="prof-desc">
+          BK21Plus Research Center for Innovative Materials and Devices, Korea University, Seoul, Republic of Korea
+        </div>
+      </li>
+    </ul>
+
+    <div class="section-title">ACADEMIC SERVICE</div>
+    <ul class="prof-list">
+      <li class="prof-row">
+        <div class="prof-date">2025 – present</div>
+        <div class="prof-position">Board Member</div>
+        <div class="prof-desc">
+          Education & Academic Affairs Committee, The Korean Society for Technology of Plasticity and Materials Processing<br>
+          <span style="color:#555;">한국소성·가공학회 교육학술이사</span>
+        </div>
+      </li>
+      <li class="prof-row">
+        <div class="prof-date">2025 – present</div>
+        <div class="prof-position">Board Member</div>
+        <div class="prof-desc">
+          Publications Committee, The Korean Microelectronics and Packaging Society<br>
+          <span style="color:#555;">한국마이크로전자 및 패키징학회 편집이사</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
